@@ -3,10 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <title>For You ❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
     body {
+      margin: 0;
       background: linear-gradient(to bottom right, #ff758c, #ff7eb3);
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -16,20 +19,41 @@
     }
 
     .card {
-      background: rgba(255,255,255,0.15);
-      padding: 30px;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 30px 20px;
       border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      max-width: 360px;
+      width: 90%;
+    }
+
+    .couple-photo {
+      width: 220px;
+      max-width: 85%;
+      border-radius: 20px;
+      margin-bottom: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
     }
 
     h1 {
-      font-size: 2.5rem;
+      margin: 10px 0;
+      font-size: 2.2rem;
+    }
+
+    p {
+      font-size: 1rem;
+      margin: 10px 0 15px;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      margin-bottom: 20px;
     }
 
     button {
       padding: 12px 24px;
       font-size: 18px;
-      margin: 15px;
+      margin: 10px;
       border: none;
       border-radius: 30px;
       cursor: pointer;
@@ -47,32 +71,64 @@
     }
   </style>
 </head>
+
 <body>
 
-<div class="card">
-  <h1>Ambika ❤️</h1>
-  <p>You make my life brighter every day.</p>
-  <h2>Will you be my Valentine? 💝</h2>
+  <div class="card">
+    <img
+      src="images/4f6cd03a-a1d8-4e89-b284-57876994b894.jpeg"
+      alt="Us ❤️"
+      class="couple-photo"
+    >
 
-  <button id="yes" onclick="yesClicked()">YES 💖</button>
-  <button id="no" onmouseover="moveNo()">NO 🙈</button>
-</div>
+    <h1>Ambika ❤️</h1>
+    <p>You make my life brighter every single day.</p>
+    <h2>Will you be my Valentine? 💝</h2>
 
-<script>
-  function yesClicked() {
-    document.body.innerHTML = `
-      <h1>💘 YAYYYY 💘</h1>
-      <h2>You just made me the happiest person ❤️</h2>
-      <p>Happy Valentine’s Day, my love 🌹</p>
-    `;
-  }
+    <button id="yes" onclick="yesClicked()">YES 💖</button>
+    <button id="no" onmouseover="moveNo()">NO 🙈</button>
+  </div>
 
-  function moveNo() {
-    const btn = document.getElementById("no");
-    btn.style.top = Math.random() * window.innerHeight + "px";
-    btn.style.left = Math.random() * window.innerWidth + "px";
-  }
-</script>
+  <script>
+    function yesClicked() {
+      document.body.innerHTML = `
+        <div style="
+          min-height:100vh;
+          display:flex;
+          flex-direction:column;
+          align-items:center;
+          justify-content:center;
+          text-align:center;
+          color:white;
+          font-family:'Segoe UI',sans-serif;
+          padding:20px;
+        ">
+          <h1 style="font-size:2.5rem;">💘 YAYYYY 💘</h1>
+
+          <img
+            src="images/IMG_0680.jpeg"
+            alt="Us again ❤️"
+            style="
+              width:260px;
+              max-width:90%;
+              border-radius:20px;
+              margin:20px 0;
+              box-shadow:0 8px 20px rgba(0,0,0,0.35);
+            "
+          >
+
+          <h2>You just made me the happiest person ❤️</h2>
+          <p>Happy Valentine’s Day, Bubu 🌹</p>
+        </div>
+      `;
+    }
+
+    function moveNo() {
+      const btn = document.getElementById("no");
+      btn.style.top = Math.random() * (window.innerHeight - 50) + "px";
+      btn.style.left = Math.random() * (window.innerWidth - 100) + "px";
+    }
+  </script>
 
 </body>
 </html>
